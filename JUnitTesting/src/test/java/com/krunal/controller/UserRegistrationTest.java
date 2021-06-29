@@ -48,4 +48,23 @@ public class UserRegistrationTest {
         Assertions.assertFalse(result);
     }
 
+    /**
+     * Purpose : To check when mobile number given properly should return true
+     */
+    @Test
+    void givenMobileNumber_Proper_ShouldReturnTrue() {
+        boolean result = userRegistrationService.checkMobileNumber("919856458645");
+        Assertions.assertTrue(result);
+    }
+
+    /**
+     * Purpose : To check when mobile number given improper should return false
+     */
+    @Test
+    void givenMobileNumber_NotProper_ShouldReturnFalse() {
+        boolean result = userRegistrationService.checkMobileNumber("9856458");
+        
+        // will give true value as mobile number is not proper
+        Assertions.assertFalse(result);
+    }
 }
