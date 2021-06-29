@@ -29,4 +29,23 @@ public class UserRegistrationTest {
         Assertions.assertFalse(result);
     }
 
+    /**
+     * Purpose : To check when last name given properly should return true
+     */
+    @Test
+    void givenLastName_Proper_ShouldReturnTrue() {
+        boolean result = userRegistrationService.checkName("Lad");
+        Assertions.assertTrue(result);
+    }
+
+    /**
+     * Purpose : To check when last name not given proper should return false
+     */
+    @Test
+    void givenLastName_NotProper_ShouldReturnFalse() {
+        boolean result = userRegistrationService.checkName("lad");
+        // will print true as first name is not proper
+        Assertions.assertFalse(result);
+    }
+
 }
