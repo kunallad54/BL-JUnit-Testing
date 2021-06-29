@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.krunal.test.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-29T06:33:11" hostname="DESKTOP-M2BVJTD" time="0.036">
+  <properties/>
+  <testcase name="givenFirstName_NotProper_ShouldReturnFalse()" classname="com.krunal.test.UserRegistrationTest" time="0.036"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

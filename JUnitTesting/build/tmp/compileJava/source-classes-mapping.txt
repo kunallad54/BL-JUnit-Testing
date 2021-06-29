@@ -1,0 +1,8 @@
+com/krunal/model/UserRegistration.java
+ com.krunal.model.UserRegistration
+com/krunal/util/Utility.java
+ com.krunal.util.Utility
+com/krunal/service/UserRegistrationService.java
+ com.krunal.service.UserRegistrationService
+com/krunal/test/UserRegistrationMain.java
+ com.krunal.test.UserRegistrationMain
