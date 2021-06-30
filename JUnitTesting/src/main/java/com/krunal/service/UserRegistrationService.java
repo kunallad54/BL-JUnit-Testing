@@ -45,7 +45,7 @@ public class UserRegistrationService {
     public boolean checkEmailAddress(String email){
 
         //Validating email id
-        String regex = "^[\\\\w!#$%&'*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&'*+/=?`{|}~^-]+)*@(?:([0-9-]{1}|[a-zA-Z]{3,5})\\\\.)+[a-zA-Z]{2,3}";
+        String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:([0-9-]{1}|[a-zA-Z]{3,5})\\.)+[a-zA-Z]{2,3}";
 
         Pattern p = Pattern.compile(regex);
 
@@ -107,4 +107,5 @@ public class UserRegistrationService {
 
         return m.matches();
     }
+
 }

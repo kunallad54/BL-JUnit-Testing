@@ -4,8 +4,8 @@
 package com.krunal.controller;
 
 import com.krunal.service.UserRegistrationService;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class UserRegistrationTest {
 
@@ -16,7 +16,7 @@ public class UserRegistrationTest {
     @Test
     void givenFirstName_Proper_ShouldReturnTrue() {
         boolean result = userRegistrationService.checkName("Krunal");
-        Assertions.assertTrue(result);
+        Assert.assertTrue(result);
     }
 
     /**
@@ -26,7 +26,7 @@ public class UserRegistrationTest {
     void givenFirstName_NotProper_ShouldReturnFalse() {
         boolean result = userRegistrationService.checkName("runal");
         // will print true as first name is not proper
-        Assertions.assertFalse(result);
+        Assert.assertFalse(result);
     }
 
     /**
@@ -35,7 +35,7 @@ public class UserRegistrationTest {
     @Test
     void givenLastName_Proper_ShouldReturnTrue() {
         boolean result = userRegistrationService.checkName("Lad");
-        Assertions.assertTrue(result);
+        Assert.assertTrue(result);
     }
 
     /**
@@ -45,7 +45,7 @@ public class UserRegistrationTest {
     void givenLastName_NotProper_ShouldReturnFalse() {
         boolean result = userRegistrationService.checkName("lad");
         // will print true as first name is not proper
-        Assertions.assertFalse(result);
+        Assert.assertFalse(result);
     }
 
     /**
@@ -54,7 +54,7 @@ public class UserRegistrationTest {
     @Test
     void givenMobileNumber_Proper_ShouldReturnTrue() {
         boolean result = userRegistrationService.checkMobileNumber("919856458645");
-        Assertions.assertTrue(result);
+        Assert.assertTrue(result);
     }
 
     /**
@@ -63,8 +63,8 @@ public class UserRegistrationTest {
     @Test
     void givenMobileNumber_NotProper_ShouldReturnFalse() {
         boolean result = userRegistrationService.checkMobileNumber("9856458");
-        
+
         // will give true value as mobile number is not proper
-        Assertions.assertFalse(result);
+        Assert.assertFalse(result);
     }
 }

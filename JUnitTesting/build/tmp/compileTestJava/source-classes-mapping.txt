@@ -1,2 +1,0 @@
-com/krunal/test/UserRegistrationTest.java
- com.krunal.test.UserRegistrationTest
