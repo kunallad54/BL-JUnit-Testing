@@ -21,3 +21,7 @@
    - Rule3 – Should have at least 1 numeric number in the password
    - Rule4 – Has exactly 1 Special Character  
    - NOTE  – All rules must be passed
+   * Parameterised Test to validate Password
+
+5. Write JUnit Parameterised Test to validate multiple entry 
+   for the Email Address.
