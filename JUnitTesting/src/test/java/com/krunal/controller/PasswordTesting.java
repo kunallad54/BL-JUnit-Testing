@@ -35,11 +35,20 @@ public class PasswordTesting {
         } );
     }
 
+    /**
+     * Purpose : To test checkPassword method and  exception handling
+     * @throws UserRegistrationException
+     */
     @Test
-    public void givenPassword_WithMinimum8Characters_ShouldReturnTrue() {
-        UserRegistrationService userRegistrationService = new UserRegistrationService();
-        boolean result = userRegistrationService.checkPassword(password);
-        Assert.assertEquals(expectedResult,result);
+    public void givenPassword_WithMinimum8Characters_ShouldReturnTrue() throws UserRegistrationException {
+        try {
+            UserRegistrationService userRegistrationService = new UserRegistrationService();
+            userRegistrationService.checkPassword(password);
+        } catch (UserRegistrationException e) {
+            Assert.assertEquals(UserRegistrationException.TypesOfException.INVALID_PASSWORD,e.type);
+        }
+
+
     }
 
 

@@ -4,6 +4,8 @@
  *            - user will enter first name,last name,email,mobile number and password
  *            - will validate all inputs are satisfying the conditions or not
  *            - validating using Regex
+ *            - Creating customized Exception Handling and handling exceptions and test it
+ *              in JUnit Testing
  *
  * @author Krunal Lad
  * @Since 29-06-2021
@@ -18,7 +20,7 @@ import com.krunal.util.Utility;
 
 public class UserRegistrationMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserRegistrationException {
 
         UserRegistrationMain usr = new UserRegistrationMain();
         System.out.println("Welcome to User Registration Program");
@@ -29,19 +31,19 @@ public class UserRegistrationMain {
     /**
      * Purpose : To check user details are valid or not
      */
-    public void userDetailsValidation() {
+    public void userDetailsValidation() throws UserRegistrationException {
 
         UserRegistrationService userRegistrationService = new UserRegistrationService();
         UserRegistration model = Utility.userDetails();
 
         System.out.println("\nKindly Enter Your Details : ");
 
-        if (userRegistrationService.checkName(model.getFirstName()))
+        if (userRegistrationService.checkFirstName(model.getFirstName()))
             System.out.println("Valid First Name");
         else
             System.out.println("Invalid First Name");
 
-        if (userRegistrationService.checkName(model.getLastName()))
+        if (userRegistrationService.checkLastName(model.getLastName()))
             System.out.println("Valid Last Name");
         else
             System.out.println("Invalid Last Name");

@@ -1,11 +1,13 @@
 /**
- * Purpose : To test User Registration Program
+ * Purpose : To test User Registration Program and handle exceptions using customized exception
  */
 package com.krunal.controller;
 
 import com.krunal.service.UserRegistrationService;
 import org.junit.Assert;
 import org.junit.Test;
+
+
 
 public class UserRegistrationTest {
 
@@ -14,57 +16,81 @@ public class UserRegistrationTest {
      */
     UserRegistrationService userRegistrationService = new UserRegistrationService();
     @Test
-    void givenFirstName_Proper_ShouldReturnTrue() {
-        boolean result = userRegistrationService.checkName("Krunal");
-        Assert.assertTrue(result);
+    public void givenFirstName_Proper_ShouldReturnTrue() throws UserRegistrationException {
+        try {
+            boolean result = userRegistrationService.checkFirstName("Krunal");
+            Assert.assertTrue(result);
+        } catch (UserRegistrationException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
-     * Purpose : To check when first name not given proper should return false
+     * Purpose : To check when first name not valid should handle exception using customized exception
      */
     @Test
-    void givenFirstName_NotProper_ShouldReturnFalse() {
-        boolean result = userRegistrationService.checkName("runal");
-        // will print true as first name is not proper
-        Assert.assertFalse(result);
+    public void givenInvalid_FirstName_ShouldReturnFalse() throws UserRegistrationException{
+        try {
+            userRegistrationService.checkFirstName("runal");
+        } catch (UserRegistrationException e) {
+            Assert.assertEquals(UserRegistrationException.TypesOfException.INVALID_FIRST_NAME,e.type);
+        }
+
     }
 
     /**
      * Purpose : To check when last name given properly should return true
      */
     @Test
-    void givenLastName_Proper_ShouldReturnTrue() {
-        boolean result = userRegistrationService.checkName("Lad");
-        Assert.assertTrue(result);
+    public void givenLastName_Proper_ShouldReturnTrue() throws UserRegistrationException{
+        try {
+            boolean result = userRegistrationService.checkLastName("Lad");
+            Assert.assertTrue(result);
+        } catch (UserRegistrationException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
-     * Purpose : To check when last name not given proper should return false
+     * Purpose : To check when last name not valid should handle exception using customized exception
      */
     @Test
-    void givenLastName_NotProper_ShouldReturnFalse() {
-        boolean result = userRegistrationService.checkName("lad");
-        // will print true as first name is not proper
-        Assert.assertFalse(result);
+    public void givenInvalid_LastName_ShouldHandleException() throws UserRegistrationException {
+        try {
+            userRegistrationService.checkLastName("lad");
+        } catch (UserRegistrationException e) {
+            Assert.assertEquals(UserRegistrationException.TypesOfException.INVALID_LAST_NAME,e.type);
+        }
+
     }
 
     /**
      * Purpose : To check when mobile number given properly should return true
      */
     @Test
-    void givenMobileNumber_Proper_ShouldReturnTrue() {
-        boolean result = userRegistrationService.checkMobileNumber("919856458645");
-        Assert.assertTrue(result);
+    public void givenMobileNumber_Proper_ShouldReturnTrue() throws UserRegistrationException {
+        try {
+            boolean result = userRegistrationService.checkMobileNumber("919856458645");
+            Assert.assertTrue(result);
+        } catch (UserRegistrationException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
-     * Purpose : To check when mobile number given improper should return false
+     * Purpose : To check when mobile number is invalid should handle exceptions using customized exception
      */
     @Test
-    void givenMobileNumber_NotProper_ShouldReturnFalse() {
-        boolean result = userRegistrationService.checkMobileNumber("9856458");
+    public void givenInvalid_MobileNumber_ShouldHandleException() throws UserRegistrationException {
+        try {
+            userRegistrationService.checkMobileNumber("9856458");
+        } catch (UserRegistrationException e) {
+            Assert.assertEquals(UserRegistrationException.TypesOfException.INVALID_MOBILE_NUMBER,e.type);
+        }
 
-        // will give true value as mobile number is not proper
-        Assert.assertFalse(result);
+
     }
 }
