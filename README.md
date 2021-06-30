@@ -14,3 +14,10 @@
    Mobile Format - E.g. 91 9919819801
    - Country code follow by space and 10 digit number
    - Testing Mobile Number using JUNIT testing
+
+4. As a User need to follow pre-defined Password rules.
+   - Rule1 – minimum 8 Characters
+   - Rule2 – Should have at least 1 Upper Case
+   - Rule3 – Should have at least 1 numeric number in the password
+   - Rule4 – Has exactly 1 Special Character  
+   - NOTE  – All rules must be passed
