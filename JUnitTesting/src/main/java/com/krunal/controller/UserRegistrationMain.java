@@ -15,8 +15,10 @@
 package com.krunal.controller;
 
 import com.krunal.model.UserRegistration;
+import com.krunal.service.ImplementationUsingLambda;
 import com.krunal.service.UserRegistrationService;
 import com.krunal.util.Utility;
+
 
 public class UserRegistrationMain {
 
@@ -24,7 +26,10 @@ public class UserRegistrationMain {
 
         UserRegistrationMain usr = new UserRegistrationMain();
         System.out.println("Welcome to User Registration Program");
-        usr.userDetailsValidation();
+        //usr.userDetailsValidation();
+
+        // Using Lambda Function implementing methods
+        usr.usingLambda();
 
     }
 
@@ -63,5 +68,39 @@ public class UserRegistrationMain {
         else
             System.out.println("Invalid Password");
 
+    }
+
+    /**
+     * Purpose : To check valid entries using lambda expressions
+     *
+     * @throws UserRegistrationException
+     */
+    public void usingLambda() throws UserRegistrationException {
+        ImplementationUsingLambda imp = new ImplementationUsingLambda();
+        UserRegistration model = Utility.userDetails();
+        if(imp.firstNameValidation.validateEntries(model.getFirstName()))
+            System.out.println("Valid Name");
+        else
+            System.out.println("Invalid Name");
+
+        if(imp.lastNameValidation.validateEntries((model.getLastName())))
+            System.out.println("Valid Last Name");
+        else
+            System.out.println("Invalid Last Name");
+
+        if(imp.emailValidation.validateEntries(model.getEmailAddress()))
+            System.out.println("Valid Email Address");
+        else
+            System.out.println("Invalid Email Address");
+
+        if(imp.mobileNumberValidation.validateEntries(model.getMobileNumber()))
+            System.out.println("Valid Mobile Number");
+        else
+            System.out.println("Invalid Mobile Number");
+
+        if(imp.passwordValidation.validateEntries(model.getPassword()))
+            System.out.println("Valid Password");
+        else
+            System.out.println("Invalid Password");
     }
 }
