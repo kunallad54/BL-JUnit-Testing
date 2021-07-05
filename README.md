@@ -30,3 +30,7 @@
    - Invalid User Details - Rewrite all Test Cases to take in Custom
      Exception for Invalid First Name, Last Name,
      Email, Mobile, and Password
+
+7. Refactor the Code to use Lambda Function to validate User Entry
+   - Use Lambda Function to validate First Name, Last Name,
+     Email, Mobile, and Password
